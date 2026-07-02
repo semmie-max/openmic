@@ -32,7 +32,8 @@
           <h1>THE BLUEPRINT OF WHAT’S NEXT.</h1>
           <p class="subtitle">Zero friction. Your pass to the world's best events.</p>
         </div>
-        <button class="cta-btn">Learn More</button>
+        <a href="aboutevent.html">
+        <button class="cta-btn">Learn More</button></a>
       </div>
 
       <!-- Main Image Showcase Card -->
@@ -150,6 +151,138 @@
   </div>
 </section>
 
+<section class="lyria-faq-section">
+  <div class="faq-card-wrapper">
+    
+    <div class="faq-header">
+      <span class="faq-pill-label">FAQ</span>
+      <h2 class="faq-title">Common Questions</h2>
+    </div>
+
+    <div class="faq-accordion-container">
+      
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-number">1</span>
+          <span class="faq-question-text">What industries do you work with?</span>
+          <span class="faq-icon-box"></span>
+        </button>
+        <div class="faq-content">
+          <div class="faq-content-inner">
+            <p>We work across a diverse range of industries including e-commerce, healthcare, finance, logistics, and technology providers, tailoring our automation workflows to your specific operational needs.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item active">
+        <button class="faq-trigger" aria-expanded="true">
+          <span class="faq-number">2</span>
+          <span class="faq-question-text">How long does implementation take?</span>
+          <span class="faq-icon-box"></span>
+        </button>
+        <div class="faq-content">
+          <div class="faq-content-inner">
+            <p>Project timelines typically range from 2 to 6 weeks, depending on complexity.</p>
+            <p>Smaller automation systems—such as AI chatbots with CRM integration—can often be deployed within 2–3 weeks.</p>
+            <p>More advanced projects involving multi-platform integrations, custom AI logic, internal workflow automation, and reporting dashboards may take 4–6 weeks or longer.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-number">3</span>
+          <span class="faq-question-text">Do we need technical knowledge to work with you?</span>
+          <span class="faq-icon-box"></span>
+        </button>
+        <div class="faq-content">
+          <div class="faq-content-inner">
+            <p>Not at all. We handle the entire design, setup, integration, and testing process. Once live, we provide intuitive dashboards and comprehensive offboarding documentation so your team can easily manage daily operations.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-number">4</span>
+          <span class="faq-question-text">Is AI automation secure?</span>
+          <span class="faq-icon-box"></span>
+        </button>
+        <div class="faq-content">
+          <div class="faq-content-inner">
+            <p>Yes, security is a priority. We build systems adhering to industry-standard data protection protocols, ensuring that your data streams, customer records, and internal logic remain heavily guarded and compliant.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-number">5</span>
+          <span class="faq-question-text">What kind of ROI can we expect?</span>
+          <span class="faq-icon-box"></span>
+        </button>
+        <div class="faq-content">
+          <div class="faq-content-inner">
+            <p>Most clients see an immediate reduction in manual operating hours, faster response times for client engagement, and significantly reduced error margins, yielding measurable returns within the first quarter post-launch.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="faq-footer">
+      <p>Have any other questions?</p>
+      <a href="#" class="faq-contact-link">Contact us <span class="arrow">↗</span></a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="lyria-footer-section">
+  <div class="footer-container">
+    
+    <div class="footer-top-row">
+      <div class="meta-block">
+        <p>Events &amp; Tickets</p>
+        <p>Creative, Lighting, Photo</p>
+        <p>Editing</p>
+      </div>
+      
+      <div class="meta-block text-center">
+        <p>Coming Soon!!</p>
+        <p><a href="#" class="footer-underline-link">View Website</a></p>
+      </div>
+      
+      <div class="meta-block text-right">
+        <p>Nigeria</p>
+        <p>2026</p>
+      </div>
+    </div>
+
+    <div class="footer-brand-display">
+      <h1 class="brand-text">TIXTEE.</h1>
+    </div>
+
+    <div class="footer-bottom-row">
+      <div class="utility-block">
+        <a href="#" class="footer-underline-link">Contact</a>
+      </div>
+      
+      <div class="utility-block text-center">
+        <a href="mailto:hello@tixty.com" class="footer-underline-link">hello@tixty</a>
+      </div>
+      
+      <div class="utility-block text-right">
+        <p class="copyright-text">
+          &copy; 2026 built by <a href="#" class="footer-underline-link">remomhe</a>
+        </p>
+        <a href="#" class="footer-underline-link privacy-link">Privacy Policy</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
 </body>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
@@ -179,5 +312,23 @@
       updateCounter();
     });
   });
+  document.querySelectorAll('.lyria-faq-section .faq-trigger').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const currentItem = trigger.closest('.faq-item');
+    const isOpen = currentItem.classList.contains('active');
+    
+    // Close any currently open accordion items
+    document.querySelectorAll('.lyria-faq-section .faq-item').forEach(item => {
+      item.classList.remove('active');
+      item.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+    });
+
+    // Toggle the current row target item state
+    if (!isOpen) {
+      currentItem.classList.add('active');
+      trigger.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
 </script>
 </html>
